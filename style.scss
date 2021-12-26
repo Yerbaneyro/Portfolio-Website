@@ -1,0 +1,316 @@
+$beige: #e9f5dbff;
+$tea-green: #cfe1b9ff;
+$laurel-green: #b5c99aff;
+$asparagus: #97a97cff;
+$moss-green: #87986aff;
+$fern-green: #718355ff;
+
+/* undohtml.css */
+/* (CC) 2004 Tantek Celik. Some Rights Reserved.                  */
+/* http://creativecommons.org/licenses/by/2.0                     */
+/* This style sheet is licensed under a Creative Commons License. */
+/* Purpose: undo some of the default styling of common (X)HTML browsers */
+
+/* link underlines tend to make hypertext less readable, 
+   because underlines obscure the shapes of the lower halves of words */
+   :link,:visited { text-decoration:none }
+
+   /* no list-markers by default, since lists are used more often for semantics */
+   ul,ol { list-style:none }
+   
+   /* avoid browser default inconsistent heading font-sizes */
+   /* and pre/code too */
+   h1,h2,h3,h4,h5,h6,pre,code { font-size:1em; }
+   
+   /* remove the inconsistent (among browsers) default ul,ol padding or margin  */
+   /* the default spacing on headings does not match nor align with 
+      normal interline spacing at all, so let's get rid of it. */
+   /* zero out the spacing around pre, form, body, html, p, blockquote as well */
+   /* form elements are oddly inconsistent, and not quite CSS emulatable. */
+   /*  nonetheless strip their margin and padding as well */
+   ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input
+   { margin:0; padding:0 }
+   
+   /* whoever thought blue linked image borders were a good idea? */
+   a img,:link img,:visited img { border:none }
+   
+   /* de-italicize address */
+   address { font-style:normal }
+   
+   /* more varnish stripping as necessary... */
+   
+
+body {
+    a {color: #00406c}
+    background-color: #00111c;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+@media screen and (max-width: 768px) {
+    #makeitlive{
+        display: none;
+    }
+    
+    .logo {
+        padding: 20px;
+        font-size: 20px;
+        color: white;
+    }
+    
+    .burger_menu{
+        padding: 10px;
+        display: inline-block;
+        background-color: transparent;
+        border: 0;
+        margin: 0;
+    }
+    
+    .burger_menu, .navigation {
+        transition: transform .3s .2s ease-in-out;
+    }
+    
+    .burger_menu--active {
+        transform: translateX(170px);
+    }
+    
+    .burger_box{
+        width: 35px;
+        height: 24px;
+        display: inline-block;
+        position: relative;
+    }
+    
+    @mixin burger_line{
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        position: absolute; 
+    }
+    
+    .burger_inner{
+        @include burger_line;
+    
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: background-color .3s .1s ease-in-out;
+    }
+    
+    .burger_inner::before,
+    .burger_inner::after {
+        @include burger_line;
+        
+        content: '';
+        left: 0;
+        transition: transform .3s .2s ease-in-out;
+    }
+    
+    .burger_inner::before{
+        top: -10px;
+    }
+    .burger_inner::after{
+        top: 10px;
+    }
+    .burger_menu--active .burger_inner{
+        background-color: transparent;
+    }
+    .burger_menu--active .burger_inner::before{
+        transform:translateY(10px) rotate(45deg) ;
+    }
+    .burger_menu--active .burger_inner::after{
+        transform:translateY(-10px) rotate(-45deg) ;
+    }
+    
+    .navigation{
+        height: 100vh;
+        width: 170px;
+        background-color: #00253e;
+        position: absolute;
+        top: 0;
+        left:0;
+        transform: translateX(-250px);
+    }
+    
+    .navigation--active {
+        transform: translateX(0);
+    }
+    
+    .navigation_list{
+        margin-top: 50px;
+        margin-left: 30px;;
+        font-weight: 500;
+        list-style: none;
+    }
+    
+    .navigation_item {
+        margin-bottom: 20px;
+        
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    }
+    .social_media{
+        display: flex;
+        justify-content: right;
+        img{
+            padding-right: 30px;
+            padding-top: 5px;
+            width: 42px;
+        }
+    }
+    /*HOME*/
+    .banner {
+        height: 50vh;
+        width: 50vh;
+        background-image: url(img/desk1.jpg);
+        background-size:contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .banner_image {
+                              
+    }
+}
+/* DESKTOP */
+@media screen and (min-width: 768px) {
+    .burger_menu{
+        display: none;
+    }
+    body{
+        background-position: top;
+        background-image: url(img/pexels-josh-sorenson-1714208.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .navigation{
+        background-color: rgba(0, 0, 0, 0.247);
+        width: 100%;
+        height: 60px;
+        display: flex;
+        justify-content:space-between;
+        h1{
+            
+            padding: 5px;
+        }
+    }
+    .logo {
+        margin-top: 10px;
+        margin-left: 10px;
+        font-size: 25px;
+        color: white;
+        
+    }
+    .navigation_item{
+        padding: 15px 35px;
+        display: inline-block;
+        
+        a {
+            color: white;
+            
+        }
+        a:hover{
+            color: rgb(235, 86, 0);
+        }
+    }
+    .right_nav{
+        background-color: rgba(0, 0, 0, 0.274);
+        width: 65px;
+        
+    }
+    .home_main{
+        display: flex;
+    }
+    
+    .social_media{
+        margin-top: 0vh;
+        img{
+            padding-left: 15px;
+            padding-top: 40px;
+            width: 30px;
+            transition: 0.1s ease-in-out 0s;
+        }
+        img:hover{
+            transform: scale(1.2);
+        }
+    }
+}
+/* Home */
+.container{
+    
+    margin-top: 50px;
+    width: 100%;
+    height:700px;
+    display: flex;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+    
+
+    div {
+        margin: 50px;
+        min-width: 300px;
+    }
+}
+.left{
+    
+    background-color: rgba(2, 2, 7, 0.568);
+    border-radius: 20px;
+    width: 50vh;
+    height: 50vh;
+    padding: 20px;
+
+    h2{
+        font-family: Source Code Pro;
+        font-size: 40px;
+        color:white;
+        margin-bottom: 20px;
+    }
+    p {
+        color:white;
+        font-size: 20px;
+        font-family: Source Code Pro;
+        text-align: center;
+    }
+    h3{
+        font-size: 30px;
+        color: white;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(167, 12, 102);
+        width: 129px;
+        padding: 7px;
+        transition: 0.3s ease-in-out 0s;
+        border-radius: 20px;
+        
+    }
+    h3:hover{
+        transform: scale(1.2);
+    }
+    .buttons{
+        margin-right: 20px;
+        position: relative;
+        top: 90px;
+    }
+   
+}
+.right{
+    
+    width: 40vh;
+    height: 50vh;
+    text-align: right;
+    
+   
+    h2{
+        color:white;
+        width: 140px;
+        font-size: 200px;
+        background-color: rgba(0, 0, 0, 0.568);
+        position: relative;
+        padding: 10px 20px;
+        padding-bottom: 20px;
+        transition: 0.3s ease-in-out 0s;
+        text-align: left;
+        border-radius: 25px;
+        
+    }
+}
