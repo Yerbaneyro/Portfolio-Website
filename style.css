@@ -285,8 +285,11 @@ body a {
 }
 
 .left h3 {
-  font-size: 30px;
-  color: white;
+  margin-right: 23px;
+}
+
+.talk {
+  font-size: 24px;
   margin-top: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -294,21 +297,127 @@ body a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #a70c66;
-  width: 129px;
+  width: 135px;
   padding: 7px;
-  -webkit-transition: 0.3s ease-in-out 0s;
-  transition: 0.3s ease-in-out 0s;
+  font-family: Varela Round;
+  border: 4px solid #2dbaf1;
   border-radius: 20px;
+  cursor: pointer;
+  color: #2dbaf1;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.267), 0 0 5px #2dbaf1;
+  -webkit-box-shadow: inset 0 0 5px #2dbaf1, 0 0 5px #2dbaf1;
+          box-shadow: inset 0 0 5px #2dbaf1, 0 0 5px #2dbaf1;
+  position: relative;
 }
 
-.left h3:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+.talk::before {
+  content: ' ';
+  position: absolute;
+  background-color: #2dbaf1;
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: perspective(40px) rotateX(40deg) scale(1, 0.5);
+          transform: perspective(40px) rotateX(40deg) scale(1, 0.5);
+  -webkit-filter: blur(1em);
+          filter: blur(1em);
 }
 
-.left .buttons {
-  margin-right: 20px;
+.talk::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-box-shadow: 0 0 90px #2dbaf1;
+          box-shadow: 0 0 90px #2dbaf1;
+  opacity: 0;
+  -webkit-transition: opacity 100ms linear;
+  transition: opacity 100ms linear;
+}
+
+.talk:hover {
+  background-color: #2dbaf1;
+  color: black;
+}
+
+.talk:focus {
+  background-color: #2dbaf1;
+  color: black;
+}
+
+.talk:hover::after {
+  opacity: 1;
+}
+
+.projects {
+  font-size: 24px;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 135px;
+  padding: 7px;
+  font-family: Varela Round;
+  border: 4px solid #04ff19;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #04ff19;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.267), 0 0 5px #04ff19;
+  -webkit-box-shadow: inset 0 0 5px #04ff19, 0 0 5px #04ff19;
+          box-shadow: inset 0 0 5px #04ff19, 0 0 5px #04ff19;
+  position: relative;
+}
+
+.projects::before {
+  content: ' ';
+  position: absolute;
+  background-color: #04ff19;
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: perspective(40px) rotateX(40deg) scale(1, 0.5);
+          transform: perspective(40px) rotateX(40deg) scale(1, 0.5);
+  -webkit-filter: blur(1em);
+          filter: blur(1em);
+}
+
+.projects::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-box-shadow: 0 0 90px #04ff19;
+          box-shadow: 0 0 90px #04ff19;
+  opacity: 0;
+  -webkit-transition: opacity 100ms linear;
+  transition: opacity 100ms linear;
+}
+
+.projects:hover {
+  background-color: #04ff19;
+  color: black;
+}
+
+.projects:focus {
+  background-color: #04ff19;
+  color: black;
+}
+
+.projects:hover::after {
+  opacity: 1;
+}
+
+.buttons {
+  margin-right: 10px;
   position: relative;
   top: 90px;
 }
