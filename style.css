@@ -52,7 +52,7 @@ body a {
 }
 
 @media screen and (max-width: 768px) {
-  #makeitlive {
+  .right {
     display: none;
   }
   .logo {
@@ -128,7 +128,7 @@ body a {
   .navigation {
     height: 100vh;
     width: 170px;
-    background-color: #00253e;
+    background-color: #011022;
     position: absolute;
     top: 0;
     left: 0;
@@ -156,9 +156,9 @@ body a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: right;
-        -ms-flex-pack: right;
-            justify-content: right;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .social_media img {
     padding-right: 30px;
@@ -215,7 +215,7 @@ body a {
     color: white;
   }
   .navigation_item a:hover {
-    color: #eb5600;
+    color: #04ff19;
   }
   .right_nav {
     background-color: rgba(0, 0, 0, 0.274);
@@ -253,26 +253,25 @@ body a {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .container div {
   margin: 50px;
-  min-width: 300px;
 }
 
 .left {
   background-color: rgba(2, 2, 7, 0.568);
   border-radius: 20px;
-  width: 50vh;
+  width: 60vh;
   height: 50vh;
   padding: 20px;
 }
 
 .left h2 {
   font-family: Source Code Pro;
-  font-size: 40px;
+  font-size: 30px;
   color: white;
   margin-bottom: 20px;
 }
@@ -285,7 +284,7 @@ body a {
 }
 
 .left h3 {
-  margin-right: 23px;
+  margin: 0 10px;
 }
 
 .talk {
@@ -417,9 +416,14 @@ body a {
 }
 
 .buttons {
-  margin-right: 10px;
   position: relative;
-  top: 90px;
+  top: 50px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .right {
