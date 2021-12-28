@@ -46,8 +46,14 @@ body {
     }    
     .logo {
         padding: 20px;
-        font-size: 20px;
+        font-size: 50px;
         color: white;
+    }
+
+    #small_screen_link{
+        display: flex;
+        justify-content: center;
+        margin-top: 70px;
     }
     
     .burger_menu{
@@ -63,7 +69,7 @@ body {
     }
     
     .burger_menu--active {
-        transform: translateX(170px);
+        transform: translateY(230px);
     }
     
     .burger_box{
@@ -115,13 +121,13 @@ body {
     }
     
     .navigation{
-        height: 100vh;
-        width: 170px;
-        background-color: #011022;
+        height: 25vh;
+        width: 100%;
+        background-color: #000000e0;
         position: absolute;
         top: 0;
         left:0;
-        transform: translateX(-250px);
+        transform: translateX(-90vh);
     }
     
     .navigation--active {
@@ -129,8 +135,11 @@ body {
     }
     
     .navigation_list{
-        margin-top: 50px;
-        margin-left: 30px;;
+        margin-top: 20px;
+        margin-left: 30px;
+        margin-right: 20px;
+        display: flex;
+        justify-content: space-between;
         font-weight: 500;
         list-style: none;
     }
@@ -163,9 +172,18 @@ body {
     }
     
 }
+/* SMALL SCREENS */
+@media screen and (max-width: 768px){
+    .buttons{
+        display: none;
+    }
+}
 /* DESKTOP */
 @media screen and (min-width: 768px) {
     .burger_menu{
+        display: none;
+    }
+    #small_screen_link{
         display: none;
     }
     body{
@@ -225,6 +243,12 @@ body {
             transform: scale(1.2);
         }
     }
+    .buttons{
+        position: relative;
+        top: 50px;    
+        display: inline-flex;
+        justify-content: space-evenly;
+    }
 }
 /* Home */
 .container{
@@ -245,12 +269,12 @@ body {
     
     background-color: rgba(2, 2, 7, 0.568);
     border-radius: 20px;
-    width: 60vh;
+    min-width: 40vh;
     height: 50vh;
     padding: 20px;
 
     h2{
-        font-family: Source Code Pro;
+        text-align: center;
         font-size: 30px;
         color:white;
         margin-bottom: 20px;
@@ -382,12 +406,7 @@ body {
 .projects:hover::after{
     opacity: 1;
 }
-.buttons{
-    position: relative;
-    top: 50px;    
-    display: inline-flex;
-    justify-content: space-evenly;
-}
+
 
    
 
